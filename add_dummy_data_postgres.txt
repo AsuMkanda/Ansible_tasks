@@ -1,0 +1,21 @@
+Create a table and add some data to the table.
+**********************************************
+sudo vi /u02/app/pgsql/Load_data/dump.sql
+
+CREATE TABLE IF NOT EXISTS test (           
+  message varchar(255) NOT NULL         
+  );          
+  INSERT INTO test(message) VALUES('Ansible is fun');
+  INSERT INTO test(message) VALUES('Ansible is good');
+  INSERT INTO test(message) VALUES('Ansible is great');
+  INSERT INTO test(message) VALUES('Ansible is excellent');
+  INSERT INTO test(message) VALUES('Ansible is fun1');
+  INSERT INTO test(message) VALUES('Ansible is good1');
+  INSERT INTO test(message) VALUES('Ansible is great1');
+  INSERT INTO test(message) VALUES('Ansible is excellent1');  
+ALTER TABLE test OWNER TO "admin";
+
+Now change the ownership of the file.
+*************************************
+sudo chmod -R a+rwX /u02/app/pgsql/Load_data/dump.sql
+
